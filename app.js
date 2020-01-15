@@ -14,17 +14,18 @@ const svg = d3.select('#map').append("svg")
     .attr("width", width)
     .attr("height", height);
 
-const deps = svg.append("g");
 const regs = svg.append("g");
 const cities = svg.append("g");
 
-d3.json('regions.json').then(function(geojson){
-
+d3.json('regions-simplified.json').then(function(geojson){
     regs.selectAll("path")
     .data(geojson.features)
         .enter()
         .append("path")
-        .attr("d", path);
+        .attr("d", path)
+        .attr("fill", "white")
+        .attr("stroke-width",4 )
+        .attr("stroke", "black")
 })
 
 
@@ -44,7 +45,8 @@ d3.json('mainCities.json').then(function(geojson){
                 .duration(200)
                 .style("opacity", .9);
             div.html("ville : " + d.properties.nom + "<br/>"
-                + "Code Postal : " + d.properties.code)
+                + "Notre magasin : " + d.properties.shopName + "<br/>"
+                + d.properties.address)
                 .style("left", (d3.event.pageX + 30) + "px")
                 .style("top", (d3.event.pageY - 30) + "px")
         })
@@ -57,13 +59,6 @@ d3.json('mainCities.json').then(function(geojson){
        
 })
 
-// d3.json('departments.json').then(function (geojson) {
-//     deps.selectAll("path")
-//         .data(geojson.features)
-//         .enter()
-//         .append("path")
-//         .attr("d", path);
-// });
 
 // tooltip 
 
@@ -73,67 +68,6 @@ var div = d3.select("body").append("div")
 
 
 
-d3.json('mainCities.json').then(function (geojson) {
-    cities.selectAll("path")
-        .data(geojson.features)
-        .enter()
-        .append("path")
-        .attr('class', 'city')
-        .attr("d", path)
-        .on("mouseover", function (d) {
-            div.transition()
-                .duration(200)
-                .style("opacity", .9);
-            div.html("ville : " + d.properties.nom + "<br/>"
-                + "Code Postal : " + d.properties.code)
-                .style("left", (d3.event.pageX + 30) + "px")
-                .style("top", (d3.event.pageY - 30) + "px")
-        })
-        .on("mouseout", function (d) {
-            div.style("opacity", 0);
-            div.html("")
-                .style("left", "-500px")
-                .style("top", "-500px");
-        });
-});
-
-
-// d3.json('departments.json').then(function (geojson) {
-//     deps.selectAll("path")
-//         .data(geojson.features)
-//         .enter()
-//         .append("path")
-//         .attr("d", path);
-// });
-
-// tooltip 
-
-var div = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
 
 
 
-// d3.json('departments.json').then(function (geojson) {
-//     deps.selectAll("path")
-//         .data(geojson.features)
-//         .enter()
-//         .append("path")
-//         .attr('class', 'department')
-//         .attr("d", path)
-//         .on("mouseover", function (d) {
-//             div.transition()
-//                 .duration(200)
-//                 .style("opacity", .9);
-//             div.html("Département : " + d.properties.NOM_DEPT + "<br/>"
-//                 + "Région : " + d.properties.NOM_REGION)
-//                 .style("left", (d3.event.pageX + 30) + "px")
-//                 .style("top", (d3.event.pageY - 30) + "px")
-//         })
-//         .on("mouseout", function (d) {
-//             div.style("opacity", 0);
-//             div.html("")
-//                 .style("left", "-500px")
-//                 .style("top", "-500px");
-//         });
-// });

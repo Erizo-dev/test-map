@@ -87,7 +87,9 @@
             },
             "properties": {
                 "code": "29019",
-                "nom": "Brest"
+                "nom": "Brest",
+                "shopName": "Rempel, Hilll and Kiehn",
+                "address": "574 Elda Turnpike Suite 230 Antoinette Landing"
             }
         },
         {
@@ -201,7 +203,9 @@
             },
             "properties": {
                 "code": "69123",
-                "nom": "Lyon"
+                "nom": "Lyon",
+                "shopName": "Nikolaus Inc",
+                "address": "51751 Mosciski Burgs Apt. 655 Lesch Falls"
             }
         },
         {
@@ -387,7 +391,9 @@
             },
             "properties": {
                 "code": "13055",
-                "nom": "Marseille"
+                "nom": "Marseille",
+                "shopName": "Grimes, Bechtelar and Walsh",
+                "address": "6435 Orie Radial Suite 562 Magali Walk"
             }
         },
         {
@@ -553,7 +559,9 @@
             },
             "properties": {
                 "code": "31555",
-                "nom": "Toulouse"
+                "nom": "Toulouse",
+                "shopName": "Stokes Inc",
+                "address": "069 Domingo Expressway Suite 133 Thompson Brooks"
             }
         },
         {
@@ -711,7 +719,9 @@
             },
             "properties": {
                 "code": "75056",
-                "nom": "Paris"
+                "nom": "Paris",
+                "shopName": "Roberts Group",
+                "address": "478 German Grove Apt. 170 Romaguera Court"
             }
         },
         {
@@ -821,7 +831,9 @@
             },
             "properties": {
                 "code": "59350",
-                "nom": "Lille"
+                "nom": "Lille",
+                "shopName": "Koepp, Wilderman and Collier",
+                "address": "96450 Juwan Expressway Suite 716 Jazmin Flat"
             }
         }
     ]

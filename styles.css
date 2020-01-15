@@ -3,15 +3,15 @@ div.tooltip {
     text-align: center;
     color: black;
     width: 275px;
-    height: 37px;
     padding: 2px;
     font: 12px sans-serif;
     background-color: darksalmon;
-
+    
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
 }
+/* height: 37px; */
 
 .city {
     scale: 10, 10;
