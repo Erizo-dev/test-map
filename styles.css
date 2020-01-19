@@ -5,9 +5,9 @@ div.tooltip {
     width: 275px;
     padding: 2px;
     font: 12px sans-serif;
-    background-color: darksalmon;
+    background-color: white;
     
-    border: 0px;
+    border: 2px solid blue;
     border-radius: 8px;
     pointer-events: none;
 }
