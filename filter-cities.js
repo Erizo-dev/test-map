@@ -4,14 +4,16 @@ const fs = require('fs');
 const faker = require('faker')
 
 
-const searched =  ['Paris', 'Lyon', 'Marseille', 'Brest', 'Toulouse', 'Lille']
+//const searched =  ['Paris', 'Lyon', 'Marseille', 'Brest', 'Toulouse', 'Lille']
+const newSearched = ['Havre', 'Paris', 'Strasbourg', 'Villeurbanne', 'Marseille', 'Antibes']
+
 let rawdata = fs.readFileSync('cities.json');
 
 console.log('typeof()', typeof(rawdata.features))
 let cities = JSON.parse(rawdata);
 
 var mainCities = cities.features.filter( f => {
-    return searched.includes(f.properties.nom) 
+    return newSearched.includes(f.properties.nom) 
 });
 
 mainCities = mainCities.map( c => {return  {
@@ -26,7 +28,7 @@ properties: {
 
 console.log('mainCities', mainCities)
 
-fs.writeFileSync('mainCities.json', JSON.stringify({'features': mainCities}), null, 4);
+fs.writeFileSync('newMainCities.json', JSON.stringify({'features': mainCities}), null, 4);
 
 
 
